@@ -96,40 +96,6 @@ buttons.forEach(function(button, index) {
 
 // =======------------------------------=======------------------------=======
 
-const paymentIncriment_ui = document.querySelector('#paymentIncriment')
-if (paymentIncriment_ui) {
-  const internalProductTopItems = paymentIncriment_ui.querySelectorAll('.payment__list__item')
-  internalProductTopItems.forEach(el => {
-    const minusItem = el.querySelector('.payment__minus')
-    const plusItem = el.querySelector('.payment__plus')
-    const value = el.querySelector('.payment__value')
-	const payment = el.querySelector('.payment__list__item h4 span')
-	const paymentMax = el.querySelector('.payment__list__item h4')
-    minusItem.addEventListener('click', () => {
-      if (Number(value.textContent) > 0) {
-        value.textContent--
-      }
-    })
-    plusItem.addEventListener('click', () => {
-      value.textContent++
-    });
-
-	plusItem.addEventListener('click', () => {
-		var paymentSum = value.textContent * payment.textContent
-		paymentMax.textContent = paymentSum
-	});
-
-	
-	minusItem.addEventListener('click', () => {
-		var paymentSum = value.textContent * payment.textContent
-		paymentMax.textContent = paymentSum
-    });
-	
-  })
-}
-
-// =======------------------------------=======------------------------=======
-
 var i=0;
 	$(".galereya_in__menu__link").each(function(){
   length
@@ -158,5 +124,50 @@ $('.galereya_in__menu a').on('click', function(event){
   $('.galereya_in__cart__list .galereya_in__item').hide();
   $($(this).attr('href')).show();
 });
+
+// =======------------------------------=======------------------------=======
+
+
+// =======------------------------------=======------------------------=======
+
+const calculatePaymentAmounts = () => {
+	const paymentAmounts = Array.from(document.querySelectorAll('.payment__title__h4'))
+	const value = paymentAmounts.map((amount) => Number(amount.innerText)).reduce((prev, curr) => prev + curr)
+	document.querySelector('#payment_sum span').innerHTML = value
+}
+
+const paymentIncriment_ui = document.querySelector('#paymentIncriment')
+if (paymentIncriment_ui) {
+  const internalProductTopItems = paymentIncriment_ui.querySelectorAll('.payment__list__item')
+  internalProductTopItems.forEach(el => {
+    const minusItem = el.querySelector('.payment__minus')
+    const plusItem = el.querySelector('.payment__plus')
+    const value = el.querySelector('.payment__value')
+	const payment = el.querySelector('.payment__list__item h4 span')
+	const paymentMax = el.querySelector('.payment__list__item h4')
+    minusItem.addEventListener('click', () => {
+      if (Number(value.textContent) > 0) {
+        value.textContent--
+      }
+    })
+    plusItem.addEventListener('click', () => {
+      value.textContent++
+    });
+
+	plusItem.addEventListener('click', () => {
+		var paymentSum = value.textContent * payment.textContent
+		paymentMax.textContent = paymentSum
+		calculatePaymentAmounts()
+	});
+
+	
+	minusItem.addEventListener('click', () => {
+		var paymentSum = value.textContent * payment.textContent
+		paymentMax.textContent = paymentSum
+		calculatePaymentAmounts()
+    });
+	
+  })
+}
 
 // =======------------------------------=======------------------------=======
