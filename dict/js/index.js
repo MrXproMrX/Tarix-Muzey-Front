@@ -130,6 +130,7 @@ $('.galereya_in__menu a').on('click', function(event){
 
 // =======------------------------------=======------------------------=======
 
+
 const calculatePaymentAmounts = () => {
 	const paymentAmounts = Array.from(document.querySelectorAll('.payment__title__h4'))
 	const value = paymentAmounts.map((amount) => Number(amount.innerText)).reduce((prev, curr) => prev + curr)
@@ -143,31 +144,59 @@ if (paymentIncriment_ui) {
     const minusItem = el.querySelector('.payment__minus')
     const plusItem = el.querySelector('.payment__plus')
     const value = el.querySelector('.payment__value')
-	const payment = el.querySelector('.payment__list__item h4 span')
+	const payment = el.querySelector('.payment__list__item h4')
 	const paymentMax = el.querySelector('.payment__list__item h4')
+	const payment_sum = document.querySelector('#payment_sum span');
+	const payment_sum_button = document.querySelector('#payment_sum_button');
     minusItem.addEventListener('click', () => {
-      if (Number(value.textContent) > 0) {
+
+    if (Number(value.textContent) > 0) {
         value.textContent--
       }
     })
+
     plusItem.addEventListener('click', () => {
       value.textContent++
+
+	    if(payment_sum.textContent > 0){
+		    payment_sum_button.className = 'payment__button modal-trigger modal-close'
+			payment_sum_button.style.cursor = "pointer"
+	    }else{
+			payment_sum_button.className = 'payment__button'
+			payment_sum_button.style.cursor = "not-allowed"
+		}
     });
 
 	plusItem.addEventListener('click', () => {
-		var paymentSum = value.textContent * payment.textContent
+		var paymentSum = value.textContent * payment.dataset.payment
 		paymentMax.textContent = paymentSum
 		calculatePaymentAmounts()
-	});
 
+		if(payment_sum.textContent > 0){
+		    payment_sum_button.className = 'payment__button modal-trigger modal-close'
+			payment_sum_button.style.cursor = "pointer"
+	    }else{
+			payment_sum_button.className = 'payment__button'
+			payment_sum_button.style.cursor = "not-allowed"
+		}
+	});
 	
 	minusItem.addEventListener('click', () => {
-		var paymentSum = value.textContent * payment.textContent
+		var paymentSum = value.textContent * payment.dataset.payment
 		paymentMax.textContent = paymentSum
 		calculatePaymentAmounts()
+
+		if(payment_sum.textContent > 0){
+		    payment_sum_button.className = 'payment__button modal-trigger modal-close'
+			payment_sum_button.style.cursor = "pointer"
+	    }else{
+			payment_sum_button.className = 'payment__button'
+			payment_sum_button.style.cursor = "not-allowed"
+		}
     });
 	
   })
 }
+
 
 // =======------------------------------=======------------------------=======

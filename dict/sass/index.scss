@@ -39,7 +39,7 @@ h1,h2{
 
     &__ru{
         position: relative;
-        width: 30px;
+        width: 45px;
         height: 20px;
 
         .dropdown-content{
@@ -51,16 +51,14 @@ h1,h2{
     &__ru_list{
         @include fontAll(0.875rem,400,$title);
         line-height: 100%;
-        padding: 5px;
     }
 
     &__ru_none{
         position: absolute;
-        border: 1px solid #EAEAEA;
         z-index: 10;
         margin-top: 5px;
         top: 100% !important;
-        left: -20px !important;
+        left: -10px !important;
         width: 60px !important;
         height: auto !important;
         background: #fff;
@@ -76,6 +74,10 @@ h1,h2{
             color:$title;
             font-weight: 400;
             text-transform: capitalize;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            padding: 5px;
         }
 
         .active{
@@ -88,14 +90,11 @@ h1,h2{
     }
 
     &__ru_cart{
-        background-color: #F8F8F8;
         width: 100%;
         height: 100%;
         display: flex;
         align-items:center;
         justify-content: center;
-        display: flex;
-        align-items:center;
         grid-gap: 5px;
         cursor: pointer;
 
@@ -425,6 +424,7 @@ h1,h2{
         -ms-border-radius:50px;
         -o-border-radius:50px;
         @extend%transition;
+        cursor: not-allowed;
 
         &:hover{
             background-color:$blue;
@@ -468,11 +468,14 @@ h1,h2{
         display: flex;
         align-items: center;
         grid-gap: 20px;
+
+        .payment__button{
+            cursor: pointer !important;
+        }
     }
 
     // ------------------------------
 }
-
 
 .modal-overlay,
 .sidenav-overlay{

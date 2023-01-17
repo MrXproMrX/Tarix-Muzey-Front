@@ -915,7 +915,7 @@ h1, h2 {
 }
 .header__ru {
   position: relative;
-  width: 30px;
+  width: 45px;
   height: 20px;
 }
 .header__ru .dropdown-content {
@@ -927,15 +927,13 @@ h1, h2 {
   font-weight: 400;
   color: #022133;
   line-height: 100%;
-  padding: 5px;
 }
 .header__ru_none {
   position: absolute;
-  border: 1px solid #EAEAEA;
   z-index: 10;
   margin-top: 5px;
   top: 100% !important;
-  left: -20px !important;
+  left: -10px !important;
   width: 60px !important;
   height: auto !important;
   background: #fff;
@@ -952,6 +950,10 @@ h1, h2 {
   color: #022133;
   font-weight: 400;
   text-transform: capitalize;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 .header__ru_none .active {
   width: 100%;
@@ -961,14 +963,11 @@ h1, h2 {
   color: #fff;
 }
 .header__ru_cart {
-  background-color: #F8F8F8;
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
-  align-items: center;
   grid-gap: 5px;
   cursor: pointer;
 }
@@ -1276,6 +1275,7 @@ h1, h2 {
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
+  cursor: not-allowed;
 }
 .payment__button:hover {
   background-color: #277FB2;
@@ -1315,6 +1315,9 @@ h1, h2 {
   display: flex;
   align-items: center;
   grid-gap: 20px;
+}
+.payment__email__form .payment__button {
+  cursor: pointer !important;
 }
 
 .modal-overlay,
