@@ -199,4 +199,35 @@ if (paymentIncriment_ui) {
 }
 
 
-// =======------------------------------=======------------------------=======
+// -------------------------------===========-------------------------------
+
+$( ".leadership__button__open" ).click(function() {
+	$(this ).each(function( i ) {
+	  if ( this.style.position !== "relative" ) {
+		this.style.position = "relative";
+		let Catalog_max__pro__ul_link = document.querySelectorAll('.leadership__item');
+		for(let i = 0; i<Catalog_max__pro__ul_link.length; i++){
+			Catalog_max__pro__ul_link[i].addEventListener('click',function(){
+				for(let j = 0; j<Catalog_max__pro__ul_link.length;j++){
+					Catalog_max__pro__ul_link[j].classList.remove('leadership__active');
+				}
+				this.classList.add('leadership__active');
+			})
+		}
+		
+	  } else {
+		this.style.position = "";
+		let Catalog_max__pro__ul_link = document.querySelectorAll('.leadership__item');
+		for(let i = 0; i<Catalog_max__pro__ul_link.length; i++){
+			Catalog_max__pro__ul_link[i].addEventListener('click',function(){
+				for(let j = 0; j<Catalog_max__pro__ul_link.length;j++){
+					Catalog_max__pro__ul_link[j].classList.remove('leadership__active');
+				}
+				this.classList.add('leadership__active_12');
+			})
+		}
+	  }
+	});
+  });
+  
+  // -------------------------------===========-------------------------------

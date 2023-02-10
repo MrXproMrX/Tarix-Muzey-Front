@@ -5,6 +5,7 @@
 @import '_about_museum';
 @import '_news';
 @import '_galereya';
+@import '_leadership';
 
 body{
     font-family: 'Gotham Pro', sans-serif;
@@ -1636,7 +1637,8 @@ h1,h2{
     .news_in__cart,
     .galereya_in__cart,
     .fotogalereya_in__cart,
-    .galereya_video__cart{
+    .galereya_video__cart,
+    .leadership__cart{
         margin-left: 60px;
         margin-right: 60px;
     }
@@ -1725,7 +1727,6 @@ h1,h2{
 }
 
 @media (max-width:1200px){
-
     .slider,
     .about,
     .exposition,
@@ -1740,7 +1741,8 @@ h1,h2{
     .news_in,
     .galereya_in,
     .fotogalereya_in,
-    .galereya_video{
+    .galereya_video,
+    .leadership{
         margin-bottom: 60px;
     }
 
@@ -2112,7 +2114,8 @@ h1,h2{
     .news_in__cart,
     .galereya_in__cart,
     .fotogalereya_in__cart,
-    .galereya_video__cart{
+    .galereya_video__cart,
+    .leadership__cart{
         margin-left: 30px;
         margin-right: 30px;
     }
@@ -2134,7 +2137,8 @@ h1,h2{
     .news_in,
     .galereya_in,
     .fotogalereya_in,
-    .galereya_video{
+    .galereya_video,
+    .leadership{
         margin-bottom: 30px;
     }
 
