@@ -703,18 +703,22 @@ label {
 .fotogalereya_in__title__h3 {
   position: absolute;
   z-index: 10;
-  bottom: 20px;
+  bottom: 40px;
   left: 0;
   width: 100%;
-  padding: 20px 75px 20px 75px;
+  padding: 0px 75px 0px 75px;
   text-align: center;
-  font-size: 1.375rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #fff;
   text-transform: uppercase;
+  max-height: 88px;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: normal;
 }
 .fotogalereya_in__item2 {
   width: 200px;
@@ -781,8 +785,7 @@ label {
 }
 
 @media (max-width: 1200px) {
-  .galereya_video__title__h4,
-.fotogalereya_in__title__h3 {
+  .galereya_video__title__h4 {
     font-size: 1.25rem;
   }
   .galereya_in__list,
@@ -804,8 +807,7 @@ label {
   .fotogalereya_in__list2 {
     margin-top: 30px;
   }
-  .galereya_video__title__h4,
-.fotogalereya_in__title__h3 {
+  .galereya_video__title__h4 {
     font-size: 1.125rem;
   }
   .galereya_in__menu {
@@ -834,8 +836,7 @@ label {
   .fotogalereya_in__list2 {
     margin-top: 20px;
   }
-  .galereya_video__title__h4,
-.fotogalereya_in__title__h3 {
+  .galereya_video__title__h4 {
     font-size: 1rem;
   }
   .galereya_video__text {
@@ -869,6 +870,11 @@ label {
 .fotogalereya_in__title__h3 {
     font-size: 0.875rem;
   }
+  .fotogalereya_in__title__h3 {
+    max-height: 65px;
+    bottom: 20px;
+    min-height: 35px;
+  }
 }
 @media (max-width: 450px) {
   .galereya_in__list__item {
@@ -878,10 +884,24 @@ label {
     height: 240px !important;
   }
   .fotogalereya_in__title__h3 {
-    display: none;
+    text-transform: initial;
+    padding: 0px 40px 0px 40px;
+    min-height: 25px;
   }
   .fotogalereya_in__item2 {
     height: 100px !important;
+  }
+  .fotogalereya_in__list1 .slick-next {
+    width: 30px;
+    height: 30px;
+    right: 10px;
+    bottom: 25px;
+  }
+  .fotogalereya_in__list1 .slick-prev {
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    bottom: 25px;
   }
 }
 .leadership {
