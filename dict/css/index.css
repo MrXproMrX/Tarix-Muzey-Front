@@ -1550,6 +1550,25 @@ h1, h2 {
 .payment__email__form .payment__button {
   cursor: pointer !important;
 }
+.payment__title {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 20px 40px;
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: #022133;
+  line-height: 135%;
+  background-color: #F2F4F4;
+}
+.payment__title span {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .modal-overlay,
 .sidenav-overlay {
@@ -2719,6 +2738,9 @@ h1, h2 {
 .leadership {
     margin-bottom: 60px;
   }
+  .payment__title {
+    font-size: 1.375rem;
+  }
   .galereya {
     padding-top: 60px;
   }
@@ -3044,7 +3066,8 @@ h1, h2 {
     display: none;
   }
   .payment__email,
-.payment__cart {
+.payment__cart,
+.payment__title {
     padding: 20px;
   }
   .footer__top__list,
